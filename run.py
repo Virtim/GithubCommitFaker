@@ -3,11 +3,12 @@ import time
 import fileinput, sys
 
 addCommand = "git add ."
-commitCommand = "git commit -m"
+commitCommand = "git commit -m \" \""
 pushCommand = "git push"
 commitCounter = -10000
 
 while commitCounter < 100000:
+    print commitCommand
     timer = 0
     if commitCounter % 2 == 0:
         for line in fileinput.input(["test.txt"], inplace=True):
