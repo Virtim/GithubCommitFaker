@@ -5,7 +5,7 @@ statusCommand = 'git status'
 addCommand = "git add ."
 commitCommand = 'git commit -m "Added"'
 pushCommand = "git push"
-commitCounter = -10000
+commitCounter = 0
 commits = 0
 
 while commitCounter < 100000:
@@ -23,8 +23,9 @@ while commitCounter < 100000:
     print(process)
     process = subprocess.Popen(addCommand.split(), stdout=subprocess.PIPE)
     process = subprocess.Popen(commitCommand.split(), stdout=subprocess.PIPE)
+    time.sleep(1)
     process = subprocess.Popen(pushCommand.split(), stdout=subprocess.PIPE)
-    print("One more commit added to github! ", "It's ", commits, " since we started")
+    print "One more commit added to github! It's ", commits, " since we started"
     commits += 1
     commitCounter += 1
     time.sleep(60)
