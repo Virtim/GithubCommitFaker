@@ -9,7 +9,6 @@ commitCounter = -10000
 commits = 0
 
 while commitCounter < 100000:
-    print commitCommand
     if commitCounter % 2 == 0:
         for line in fileinput.input(["test.txt"], inplace=True):
             line = line.replace("car", "truck")
