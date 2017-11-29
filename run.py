@@ -20,10 +20,11 @@ while commitCounter < 100000:
             # sys.stdout is redirected to the file
             sys.stdout.write(line)
     process = subprocess.Popen(statusCommand.split(), stdout=subprocess.PIPE)
+    print(process)
     process = subprocess.Popen(addCommand.split(), stdout=subprocess.PIPE)
     process = subprocess.Popen(commitCommand.split(), stdout=subprocess.PIPE)
     process = subprocess.Popen(pushCommand.split(), stdout=subprocess.PIPE)
-    print("One more commit added to github" + "It's" + commits + "since we started")
+    print("One more commit added to github! ", "It's ", commits, " since we started")
     commits += 1
     commitCounter += 1
     time.sleep(60)
