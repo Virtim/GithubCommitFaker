@@ -5,6 +5,7 @@ statusCommand = 'git status'
 addCommand = "git add ."
 commitCommand = 'git commit -m "Added"'
 pushCommand = "git push"
+removeIndexLock = "sudo rm -rf ./.git/index.lock"
 commitCounter = 0
 commits = 0
 
@@ -19,12 +20,13 @@ while commitCounter < 100000:
             line = line.replace("truck", "car")
             # sys.stdout is redirected to the file
             sys.stdout.write(line)
+    process = subprocess.Popen(removeIndexLock.split(), stdout=subprocess.PIPE)
     process = subprocess.Popen(statusCommand.split(), stdout=subprocess.PIPE)
-    print(process)
     process = subprocess.Popen(addCommand.split(), stdout=subprocess.PIPE)
     process = subprocess.Popen(commitCommand.split(), stdout=subprocess.PIPE)
     time.sleep(1)
     process = subprocess.Popen(pushCommand.split(), stdout=subprocess.PIPE)
+    time.sleep(1)
     print "One more commit added to github! It's ", commits, " since we started"
     commits += 1
     commitCounter += 1
