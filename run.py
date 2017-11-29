@@ -1,6 +1,7 @@
 import subprocess
 import time
 import fileinput, sys
+import os.path
 statusCommand = 'git status'
 addCommand = "git add ."
 commitCommand = 'git commit -m "Added"'
@@ -20,7 +21,9 @@ while commitCounter < 100000:
             line = line.replace("truck", "car")
             # sys.stdout is redirected to the file
             sys.stdout.write(line)
-    process = subprocess.Popen(removeIndexLock.split(), stdout=subprocess.PIPE)
+    print os.path.isfile('./.git/index.lock')
+    if os.path.isfile('./.git/index.lock'):
+        os.remove('./.git/index.lock')
     process = subprocess.Popen(statusCommand.split(), stdout=subprocess.PIPE)
     process = subprocess.Popen(addCommand.split(), stdout=subprocess.PIPE)
     process = subprocess.Popen(commitCommand.split(), stdout=subprocess.PIPE)
