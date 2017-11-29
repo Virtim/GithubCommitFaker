@@ -22,8 +22,7 @@ while commitCounter < 100000:
             # sys.stdout is redirected to the file
             sys.stdout.write(line)
     print os.path.isfile('./.git/index.lock')
-    if os.path.isfile('./.git/index.lock'):
-        os.remove('./.git/index.lock')
+    os.remove('./.git/index.lock')
     process = subprocess.Popen(statusCommand.split(), stdout=subprocess.PIPE)
     process = subprocess.Popen(addCommand.split(), stdout=subprocess.PIPE)
     process = subprocess.Popen(commitCommand.split(), stdout=subprocess.PIPE)
