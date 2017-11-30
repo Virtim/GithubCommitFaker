@@ -1,24 +1,58 @@
 truck
 
 car
+
+
+car
+
+truck
 Replaced Truck
+
 Replaced car
 
 Replaced truck
+
+
+Replaced truck
+
 Replaced car
+Replaced car
+
+Replaced truck
 Replaced Truck
+
+
+
+
 
 
 
 truck
 
 car
+
+
+car
+
+truck
 Replaced Truck
+
 Replaced car
 
 Replaced truck
+
+
+Replaced truck
+
 Replaced car
+Replaced car
+
+Replaced truck
 Replaced Truck
+
+
+
+
 
 
 

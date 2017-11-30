@@ -25,12 +25,10 @@ while commitCounter < 100000:
             line = line.replace("car", "truck")
             # sys.stdout is redirected to the file
             sys.stdout.write(line)
-            print "Replaced car"
         elif "truck" in line:
             line = line.replace("truck", "car")
             # sys.stdout is redirected to the file
             sys.stdout.write(line)
-            print "Replaced Truck"
     process = subprocess.Popen(statusCommand.split(), stdout=subprocess.PIPE)
     process = subprocess.Popen(addCommand.split(), stdout=subprocess.PIPE)
     process = subprocess.Popen(commitCommand.split(), stdout=subprocess.PIPE)
