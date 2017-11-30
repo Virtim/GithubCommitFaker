@@ -2,6 +2,8 @@ import subprocess
 import time
 import fileinput, sys
 import os.path
+import random
+
 statusCommand = 'git status'
 addCommand = "git add ."
 commitCommand = 'git commit -m "Added"'
@@ -11,6 +13,8 @@ commitCounter = 0
 commits = 0
 
 while commitCounter < 100000:
+    timeToSleep = random.randint(1,43200)
+    print timeToSleep
     if commitCounter % 2 == 0:
         for line in fileinput.input(["test.txt"], inplace=True):
             line = line.replace("car", "truck")
@@ -34,4 +38,5 @@ while commitCounter < 100000:
     print "One more commit added to github! It's ", commits, " since we started"
     commits += 1
     commitCounter += 1
-    time.sleep(60)
+    print "Going to sleep for ", timeToSleep, " seconds"
+    time.sleep(timeToSleep)
