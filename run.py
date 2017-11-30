@@ -21,8 +21,10 @@ while commitCounter < 100000:
             line = line.replace("truck", "car")
             # sys.stdout is redirected to the file
             sys.stdout.write(line)
-    print os.path.isfile('./.git/index.lock')
-    os.remove('./.git/index.lock')
+    try:
+        os.remove('./.git/index.lock')
+    except OSError:
+        print os.path.isfile('./.git/index.lock')
     process = subprocess.Popen(statusCommand.split(), stdout=subprocess.PIPE)
     process = subprocess.Popen(addCommand.split(), stdout=subprocess.PIPE)
     process = subprocess.Popen(commitCommand.split(), stdout=subprocess.PIPE)
