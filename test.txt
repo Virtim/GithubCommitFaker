@@ -1,2 +1,2 @@
-truck
-truck
+car
+car
