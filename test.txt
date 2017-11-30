@@ -6,8 +6,22 @@ car
 car
 
 truck
+
+
+
+
+car
+
+truck
+
+
+truck
+
+car
 Replaced Truck
 
+
+
 Replaced car
 
 Replaced truck
@@ -16,10 +30,35 @@ Replaced truck
 Replaced truck
 
 Replaced car
+
+
+
+
+Replaced truck
+
+Replaced car
+
+
 Replaced car
 
 Replaced truck
+Replaced car
+
+Replaced truck
+
+
+Replaced truck
+
+Replaced car
 Replaced Truck
+
+
+
+
+
+
+
+
 
 
 
@@ -35,8 +74,22 @@ car
 car
 
 truck
+
+
+
+
+car
+
+truck
+
+
+truck
+
+car
 Replaced Truck
 
+
+
 Replaced car
 
 Replaced truck
@@ -45,10 +98,35 @@ Replaced truck
 Replaced truck
 
 Replaced car
+
+
+
+
+Replaced truck
+
+Replaced car
+
+
 Replaced car
 
 Replaced truck
+Replaced car
+
+Replaced truck
+
+
+Replaced truck
+
+Replaced car
 Replaced Truck
+
+
+
+
+
+
+
+
 
 
 
