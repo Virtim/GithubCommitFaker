@@ -20,7 +20,6 @@ while commitCounter < 100000:
     timeToSleep = random.randint(1,43200)
     print "Going to sleep for ", timeToSleep, " seconds"
     for line in fileinput.input(["test.txt"], inplace=True):
-        print line
         if "car" in line:
             line = line.replace("car", "truck")
             # sys.stdout is redirected to the file
