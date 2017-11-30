@@ -10,9 +10,8 @@ commitCommand = 'git commit -m "Added"'
 pushCommand = "git push"
 removeIndexLock = "sudo rm -rf ./.git/index.lock"
 commitCounter = 0
-commits = 0
 
-while commitCounter < 100000:
+while commitCounter > -1:
     try:
         os.remove('./.git/index.lock')
     except OSError:
@@ -34,7 +33,6 @@ while commitCounter < 100000:
     time.sleep(1)
     process = subprocess.Popen(pushCommand.split(), stdout=subprocess.PIPE)
     time.sleep(1)
-    print "One more commit added to github! It's ", commits, " since we started"
-    commits += 1
+    print "One more commit added to github! It's ", commitCounter, " since we started"
     commitCounter += 1
     time.sleep(timeToSleep)
