@@ -13,22 +13,21 @@ commitCounter = 0
 commits = 0
 
 while commitCounter < 100000:
-    timeToSleep = random.randint(1,43200)
-    print timeToSleep
-    if commitCounter % 2 == 0:
-        for line in fileinput.input(["test.txt"], inplace=True):
-            line = line.replace("car", "truck")
-            # sys.stdout is redirected to the file
-            sys.stdout.write(line)
-    else:
-        for line in fileinput.input(["test.txt"], inplace=True):
-            line = line.replace("truck", "car")
-            # sys.stdout is redirected to the file
-            sys.stdout.write(line)
     try:
         os.remove('./.git/index.lock')
     except OSError:
         print os.path.isfile('./.git/index.lock')
+    timeToSleep = random.randint(1,43200)
+    print "Going to sleep for ", timeToSleep, " seconds"
+    for line in fileinput.input(["test.txt"], inplace=True):
+        if "car" in line:
+            line = line.replace("car", "truck")
+            # sys.stdout is redirected to the file
+            sys.stdout.write(line)
+        else:
+            line = line.replace("truck", "car")
+            # sys.stdout is redirected to the file
+            sys.stdout.write(line)
     process = subprocess.Popen(statusCommand.split(), stdout=subprocess.PIPE)
     process = subprocess.Popen(addCommand.split(), stdout=subprocess.PIPE)
     process = subprocess.Popen(commitCommand.split(), stdout=subprocess.PIPE)
@@ -38,5 +37,4 @@ while commitCounter < 100000:
     print "One more commit added to github! It's ", commits, " since we started"
     commits += 1
     commitCounter += 1
-    print "Going to sleep for ", timeToSleep, " seconds"
     time.sleep(timeToSleep)
