@@ -1,0 +1,26 @@
+version: 2.1
+jobs:
+  commits:
+    docker:
+      - image: 'circleci/python:latest'
+    steps:
+      - checkout
+      - run: python run.py
+
+workflows:
+  version: 2.1
+  Make Commits:
+    jobs:
+      - commits:
+          filters:
+            branches:
+              ignore: master
+  Scheduled Commits:
+    triggers:
+      - schedule:
+          cron: '0 0 * * *'
+          filters:
+            branches:
+              only: master
+    jobs:
+      - commits
