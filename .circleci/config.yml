@@ -5,6 +5,11 @@ jobs:
       - image: 'circleci/python:latest'
     steps:
       - checkout
+      - run:
+          name: set up git
+          command: |
+            git config --global user.email "$USEREMAIL"
+            git config --global user.name "$USERNAME"
       - run: python run.py
 
 workflows:
