@@ -1,10 +1,11 @@
 import subprocess
 import time
 import fileinput, sys
-import os.path
+import os
 import random
 
-commitCommand = 'git commit --allow-empty -m commit'
+commitMessage = os.environ['CIRCLE_SHA1']
+commitCommand = "git commit --allow-empty -m {}"
 pushCommand = "git push origin master -f"
 removeIndexLock = "sudo rm -rf ./.git/index.lock"
 timeToSleep = 2
@@ -20,6 +21,6 @@ while commitCounter > 0:
     time.sleep(1)
     process = subprocess.Popen(pushCommand.split(), stdout=subprocess.PIPE)
     time.sleep(1)
-    print("One more commit added to github! Only ", commitCounter, " left until script is done")
+    print("One more commit added to github! Only {commitCounter} left until script is done")
     commitCounter -= 1
     time.sleep(timeToSleep)

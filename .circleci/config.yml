@@ -20,14 +20,11 @@ workflows:
   version: 2.1
   Make Commits:
     jobs:
-      - commits:
-          filters:
-            branches:
-              ignore: master
+      - commits
   Scheduled Commits:
     triggers:
       - schedule:
-          cron: '0 0 * * *'
+          cron: '0 3,6,9,15,18 * * *'
           filters:
             branches:
               only: master
