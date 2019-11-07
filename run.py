@@ -5,7 +5,7 @@ import os
 import random
 
 commitMessage = os.environ['CIRCLE_SHA1']
-commitCommand = "git commit --allow-empty -m {}"
+commitCommand = "git commit --allow-empty -m {commitMessage}"
 pushCommand = "git push origin master -f"
 removeIndexLock = "sudo rm -rf ./.git/index.lock"
 timeToSleep = 2
