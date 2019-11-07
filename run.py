@@ -5,7 +5,7 @@ import os.path
 import random
 
 commitCommand = 'git commit --allow-empty -m commit'
-pushCommand = "git push origin master"
+pushCommand = "git push origin master -f"
 removeIndexLock = "sudo rm -rf ./.git/index.lock"
 timeToSleep = 2
 commitCounter = 25

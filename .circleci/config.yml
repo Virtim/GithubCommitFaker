@@ -10,7 +10,11 @@ jobs:
           command: |
             git config --global user.email "$USEREMAIL"
             git config --global user.name "$USERNAME"
-      - run: python run.py
+      - run: 
+          name: Make Commits
+          command: | 
+            git checkout master
+            python run.py
 
 workflows:
   version: 2.1
