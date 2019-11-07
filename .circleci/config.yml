@@ -19,12 +19,6 @@ jobs:
 
 workflows:
   version: 2.1
-  Make Commits:
-    jobs:
-      - commits:
-          filters:
-            branches:
-              ignore: master
   Scheduled Commits:
     triggers:
       - schedule:
