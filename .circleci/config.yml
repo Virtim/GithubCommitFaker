@@ -13,7 +13,7 @@ jobs:
       - run: 
           name: Make Commits
           command: | 
-            git checkout -b "$CIRCLE_SHA1"
+            git checkout -b "$CIRCLE_BUILD_NUM"
             git commit --allow-empty -m "$CIRCLE_SHA1"
             git push --set-upstream origin "$CIRCLE_BUILD_NUM"
 
