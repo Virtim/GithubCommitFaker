@@ -15,7 +15,7 @@ jobs:
           command: | 
             git checkout -b "$CIRCLE_SHA1"
             git commit --allow-empty -m "$CIRCLE_SHA1"
-            git push --set-upstream origin "$CIRCLE_SHA1"
+            git push --set-upstream origin "$CIRCLE_BUILD_NUM"
 
 workflows:
   version: 2.1
