@@ -15,7 +15,7 @@ jobs:
           command: | 
             git checkout master
             git commit --allow-empty -m "$CIRCLE_SHA1"
-            git push
+            git push -f
 
 workflows:
   version: 2.1
