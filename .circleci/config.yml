@@ -33,6 +33,3 @@ workflows:
               only: master
     jobs:
       - commits
-  Commits:
-    jobs:
-      - commits
