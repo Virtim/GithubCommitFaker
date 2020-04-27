@@ -13,12 +13,13 @@ jobs:
       - run: 
           name: Make Commits
           command: | 
+            git pull
             git checkout -b "$CIRCLE_BUILD_NUM"
             git commit --allow-empty -m "$CIRCLE_SHA1"
             git push --set-upstream origin "$CIRCLE_BUILD_NUM"
             git checkout master
             git merge "$CIRCLE_BUILD_NUM" --no-edit
-            git push
+            git push -f
             git branch -r --merged origin/master | grep -v master | grep "origin/" | cut -d "/" -f 3- | xargs -n 20 git push --delete origin
 
 workflows:
